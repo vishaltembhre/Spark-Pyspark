@@ -1,0 +1,47 @@
+--E1
+
+-Spark - Unified Compute Engine
+-Unified (can support mltiple task - Analysis , cleaning & transforming)
+-Compute engine (noting is stored by SPARK and processing memory is RAM)
+-Master-Slave(Parallel data processing) Arch
+-Libraries 
+
+--E2
+
+-Can process Structured and semi-structured data
+-3V of bigdata (velocity, variety, volumne)
+-ELT after bigdata
+-Follows Distiributed Approach (horizontal Scaling, Economical, high availablility)
+
+--E3-HADOOP
+
+-Hadoop - Framework same as Spark
+-HDFS - distributed file system
+-Hive - DWH built on type of Hadoop
+-Hive runs on top of Hadoop and uses HDFS to store its data
+-Spark is better with bigger the data
+-Hadoop is slower than SPARK because it write data back to disk and reads again from disk to in-memory.
+-Hadoop cannot handle streaming but spark can
+-Spark Api (high level - dataframe , sparkSQL,Streaming,ML lib & Graphx) (low level - RDD and DStream)
+-Security in HADOOP is better than SPARK bcs of Kerberos Authentication via YARN
+-Hence Spark relies on HDFS for ACL(Access Control List) and YARN for Authentication
+-Spark relies on DAG(& RDD - Immutable) for Fault tolerance & hadoop relies on replication factor
+
+--E4-Spark Ecosystem
+
+-Usually high level api is preferred
+-Cluster manager - YARN, MESOS, Kubernetes
+
+--E5-Spark Arch
+-Master is also part of cluster (If i've 10 nodes then 1 will becore master (YARN) and remaining can be used as Worker node)
+-developer will run Spark via Spark SUBMIT with all the reqired resource
+-Entire node will not get allocated to developer via YARN only asked will get allocated i.e worker node capacity(10 core & 20GB) and dev asked (5 core & 10GB) then only whatever that is asked will get allocated.
+-PySpark is Python wrapper over Spark JAVA Api using Py4j library (JVM application master) 
+-So while using Pyspark, application master node will get installed with 2 driver, Python and JVM whereas in case of java only JVM will get installed and worked node will have only JVM to carry on processing task
+-But when UDF is being defined then worked node need 2 drivers, hence its advised to avoid UDF
+
+--E6-Transformations & Actions
+-Transformations - Lasy Evaluations (map,filter,fatmap,group by, reduceby,distinct, join, sortby)
+-Narrow dependency Transformations - are independent of other Transformations and doesnot require data movemnet between partitions (filter, select, union, map)
+-Wide dependency Transformations - opposite of Narrow (group by)
+-Actions - Trigger Transformations(collect, count, first, take ,reduce, saveasTextfile,countby)
