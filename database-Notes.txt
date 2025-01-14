@@ -1,0 +1,40 @@
+--Indexing
+Disk I/O
+  Block is being read not the byte location for any read/write operation
+Index are very small referential table that hold indexes against referred columns
+Index are usually 2column referential table where indexed column is referenced against row_id of the same column(not primary key)
+& Index will get sorted by INDEXED COLUMN VALUE not as per ROW_ID. This is how the Index will get serialized and stored in the disk.
+
+So indexing reduces the Read I/O and from entire table data to indexed data and specific data that is needed.
+i.e. 1 row of table is 100 byte and we've 100 records, that means total size 100*100 = 10000 byte of data, if one block of memory is 
+500 byte then 20 block needed to store entire table. And all 20 block will have read I/O while fectching data.
+After indexing we'll have one index table with 2 columns(Indexed Column & Row_ID column) and if one record need 10 byte of memory 
+then 100 will need 100*10 = 1000 byte , i.e. 2 blocks of memory (500 * 2 = 1000). 
+So now even if need to fetch a record based on condtion (Salary = 1000 and we've 2 records satisfying this condition considering 
+both of them stays at 2 different memory block) from indexed column then there will be 2 block read I/O of index and 2 for required
+records, i.e. 2 + 2 = 4 Read I/O incomparision to 20 Read I/O without index. That means 5X performance boost.
+
+We can do multilevel INDEXING as well (B-tree and B+ tree DS logic)
+
+Types of Index - 
+-Use B-tree indexes for general-purpose queries.Best For: Columns with a high cardinality (many distinct values)
+Any column used frequently in SELECT, JOIN, or WHERE clauses, especially those with = or range queries like BETWEEN, > or <.
+-Use unique indexes for enforcing uniqueness constraints, columns like Primary_key
+-Use full-text indexes for text-based search, columns like text_description.
+-Use spatial indexes for geographic data.
+-Bitmap INDEX - for columns with a small number of distinct values 
+-Clustered Index - is index over column on which stored table is also ordered based on same column i.e.based on sort AGE column 
+table is stored physically then index over same AGE column will provide better performance
+
+Considerations When Adding an Index:
+Overhead: Indexes speed up query performance but slow down data modification operations (insert, update, delete).
+Disk Space: Indexes consume additional disk space.
+Choosing the Right Index: Be selective with the columns you index. Adding too many indexes can degrade performance, especially during writes.
+
+INDEX MAINTAINENCE
+Automatic Index Updates: The DBMS handles the updating of indexes automatically when you insert, update, or delete rows. 
+This includes modifying or removing index entries as necessary to keep the indexes in sync with the data.
+
+Manual Index Maintenance: While indexes are automatically updated, index fragmentation can occur over time due to heavy data modifications.
+Manual maintenance (rebuilding or reorganizing indexes) may be necessary to maintain optimal performance.
+  
