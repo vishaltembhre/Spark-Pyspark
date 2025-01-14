@@ -1,0 +1,5 @@
+--Indexing
+Disk I/O
+  Block is being read not the byte location for any read/write operation
+Index are very small referential table that hold indexes against referred columns 
+  
