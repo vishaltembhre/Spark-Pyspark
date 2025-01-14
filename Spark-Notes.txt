@@ -17,7 +17,7 @@
 
 -Hadoop - Framework same as Spark
 -HDFS - distributed file system
--Hive - DWH built on type of Hadoop
+-Hive - DWH built on top of Hadoop
 -Hive runs on top of Hadoop and uses HDFS to store its data
 -Spark is better with bigger the data
 -Hadoop is slower than SPARK because it write data back to disk and reads again from disk to in-memory.
