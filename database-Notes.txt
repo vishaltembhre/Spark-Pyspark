@@ -37,4 +37,20 @@ This includes modifying or removing index entries as necessary to keep the index
 
 Manual Index Maintenance: While indexes are automatically updated, index fragmentation can occur over time due to heavy data modifications.
 Manual maintenance (rebuilding or reorganizing indexes) may be necessary to maintain optimal performance.
+
+SHARDING & PARTITIONING 
+-we SHARD database-server (to scale horizontally) and we partition data (to improve efficiency and manageability)
+-SHARD - multiple database-server
+-PARTITION - multiple databases withing single server or multiple server
+-SHARDING without PARTITION is Database Replica
+-we can move partitions across SHARDs for load balancing.
+-horizontal partitioning - Document level or Row level 
+-Vertical partitioning - Column level
+-why shard ? better R/W, increase storage, high availablity
+-why not to shard ? complex and cross-shard operations are computationally expensive
+
+
+
+
+
   
