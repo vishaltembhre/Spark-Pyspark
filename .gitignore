@@ -1,1 +1,3 @@
 sparkvenv
+*.csv
+*.json
