@@ -1,3 +1,4 @@
 sparkvenv
 *.csv
 *.json
+data
