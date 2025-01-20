@@ -54,3 +54,45 @@ i.e. SparkSession is the preferred and more modern way to interact with Spark, w
 lower-level API.
 ]
 
+[
+# Create Spark session with specific configurations for compute and memory
+spark = SparkSession.builder \
+    .appName("SparkSessionWithResources") \
+    .config("spark.executor.memory", "1g")  # Memory for each executor (e.g., 1GB)
+    .config("spark.executor.cores", "1")  # Number of cores per executor (e.g., 1 cores)
+    .config("spark.num.executors", "4")  # Total number of executors (e.g., 4 executors)
+    .config("spark.driver.memory", "512m")  # Memory for the driver (e.g., 2GB)
+    .config("spark.driver.cores", "1")  # Number of cores for the driver (e.g., 1 core)
+    .getOrCreate()
+
+minimum memory that can be allocated to EXECUTOR is 1GB and 1 core
+minimum memory that can be allocated to DRIVER is 512MB and 1 core
+]
+
+[
+# Create a SparkSession with resource allocation configurations
+spark = SparkSession.builder \
+    .appName("ResourceAllocationExample") \
+    
+    # Configure driver resources
+    .config("spark.driver.memory", "2g")  # Driver memory (2 GB)
+    .config("spark.driver.cores", "2")    # Driver cores (2 cores)
+    
+    # Configure executor resources
+    .config("spark.executor.memory", "4g")  # Executor memory (4 GB)
+    .config("spark.executor.cores", "2")    # Executor cores (2 cores)
+    .config("spark.num.executors", "4")     # Number of executors (4 executors)
+    
+    # Configure Spark worker (optional, depends on cluster manager)
+    .config("spark.deploy.mode", "cluster")  # Or use 'local' for local mode
+
+    .getOrCreate()
+
+# Check SparkContext resource usage
+sc = spark.sparkContext
+print("Total Cores allocated:", sc.defaultParallelism)
+print("Spark Configuration Details:", sc.getConf().getAll())
+]
+
+
+
