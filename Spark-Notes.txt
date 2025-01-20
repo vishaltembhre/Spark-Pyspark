@@ -47,8 +47,14 @@
 -Actions - Trigger Transformations(collect, count, first, take ,reduce, saveasTextfile,countby)
 
 
+
+
+
+
+
+
 [
-sparksession is higher-level abstraction that includes SparkContext,SQLcontext,hiveContext
+sparksession is higher-level abstraction that includes SparkContext, SQLcontext, hiveContext
 unified api to work with structured data while SparkContext is more low-level and focussed on RDDs
 i.e. SparkSession is the preferred and more modern way to interact with Spark, while SparkContext is the older, 
 lower-level API.
