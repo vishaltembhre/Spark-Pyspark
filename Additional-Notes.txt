@@ -7,3 +7,12 @@
 --spark catalyst optimiser working
 
 --HBase opensource NoSQL DB - non relational
+
+--df.cache()
+--df.persist()
+--df.repartition(4).write.csv("output.csv")
+--UDF
+--Window function 
+window_spec = Window.partitionBy("department").orderBy(col("salary").desc())
+df.withColumn("rank", rank().over(window_spec)).show()
+
