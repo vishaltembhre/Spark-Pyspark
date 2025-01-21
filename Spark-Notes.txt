@@ -100,5 +100,9 @@ print("Total Cores allocated:", sc.defaultParallelism)
 print("Spark Configuration Details:", sc.getConf().getAll())
 ]
 
-
+[
+spark.deploy.mode: This property defines the mode in which your Spark application will run.
+client: The driver program (the Spark application controlling the job) runs on the machine from which the Spark job is submitted.
+cluster: The driver program runs inside the Spark cluster itself, on one of the worker nodes.
+]
 
