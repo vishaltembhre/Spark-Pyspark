@@ -2,3 +2,4 @@
 
 --Spark SQL
 
+--data format(parquet,orv) and storage format(columnar & row)
