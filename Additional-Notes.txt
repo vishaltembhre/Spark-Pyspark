@@ -3,3 +3,7 @@
 --Spark SQL
 
 --data format(parquet,orv) and storage format(columnar & row)
+
+--spark catalyst optimiser working
+
+--HBase opensource NoSQL DB - non relational
