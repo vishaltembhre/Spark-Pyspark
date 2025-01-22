@@ -17,3 +17,6 @@ window_spec = Window.partitionBy("department").orderBy(col("salary").desc())
 df.withColumn("rank", rank().over(window_spec)).show()
 
 --python - decorator function
+
+--date time format manipulation
+
