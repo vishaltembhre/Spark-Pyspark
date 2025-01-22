@@ -106,3 +106,8 @@ client: The driver program (the Spark application controlling the job) runs on t
 cluster: The driver program runs inside the Spark cluster itself, on one of the worker nodes.
 ]
 
+[
+    updating spark Session.builder with master configration restricting it with limited number of cores can cause error
+    so better keep it local[*] or do not specify anything. It might get conflicted & cause error like 
+    "Error: 'NoneType' object has no attribute 'sc'"
+]
