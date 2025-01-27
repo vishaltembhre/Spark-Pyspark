@@ -24,3 +24,10 @@ df.withColumn("rank", rank().over(window_spec)).show()
 https://spark.apache.org/docs/4.0.0-preview1/sql-data-sources-protobuf.html
 
 --https://www.esri.com/en-us/what-is-gis/overview
+
+---JASH RADIA
+--DSA
+--Data modelling & SQL
+--System design
+--RRK (role related knowledge)
+
