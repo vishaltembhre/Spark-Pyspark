@@ -20,3 +20,7 @@ df.withColumn("rank", rank().over(window_spec)).show()
 
 --date time format manipulation
 
+--spark notes
+https://spark.apache.org/docs/4.0.0-preview1/sql-data-sources-protobuf.html
+
+--https://www.esri.com/en-us/what-is-gis/overview
