@@ -111,3 +111,8 @@ cluster: The driver program runs inside the Spark cluster itself, on one of the 
     so better keep it local[*] or do not specify anything. It might get conflicted & cause error like 
     "Error: 'NoneType' object has no attribute 'sc'"
 ]
+
+[
+In Spark, "Delta" refers to the "Delta Lake" format, which is an open-source storage layer that provides ACID (Atomicity, Consistency, Isolation, Durability) transactions on top of existing data lakes. And metadata support.
+And underlying data is stored in parquet format.
+]
