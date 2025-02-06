@@ -1,0 +1,3 @@
+- <> & != are same 
+- left join & right join will help you get records with NULL incase condition wont match
+- 
