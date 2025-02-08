@@ -1,3 +1,8 @@
 - <> & != are same 
 - left join & right join will help you get records with NULL incase condition wont match
-- 
+- NULL records won't take part in join (except full outer join) so incase t1 have 2 NULL and t2 have 1 NULL final result will have 3 NULL records not 4 (as NULL won't take part in join)
+- w1.recordDate = w2.recordDate + 1 --will add one day in date
+- SELECT '2024-02-05'::DATE - INTERVAL '10 days' AS new_date; --for days
+- SELECT '2024-02-05'::DATE - INTERVAL '2 months' AS new_date; --for months
+- SELECT '2024-02-05'::DATE - INTERVAL '3 years' AS new_date; --for years
+- LAG function - LAG(price, 1, NULL)
