@@ -25,5 +25,6 @@ as cnt from employee as a join employee as b on a.id = b.managerid
 }
 
 - New column created while SELECT for manipulation is not useful/throws error while used for filtering with where clause for postgres leetcode engine, se we've to create CTE to use it for filtering 
+- SUM with CASE - sum(case when b.action = 'confirmed' then 1 else 0 end ) as summ
 - 
 
