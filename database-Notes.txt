@@ -1,6 +1,6 @@
---Indexing
+Indexing
 Disk I/O
-  Block is being read not the byte location for any read/write operation
+Block is being read not the byte location for any read/write operation
 Index are very small referential table that hold indexes against referred columns
 Index are usually 2column referential table where indexed column is referenced against row_id of the same column(not primary key)
 & Index will get sorted by INDEXED COLUMN VALUE not as per ROW_ID. This is how the Index will get serialized and stored in the disk.
@@ -49,7 +49,14 @@ SHARDING & PARTITIONING
 -why shard ? better R/W, increase storage, high availablity
 -why not to shard ? complex and cross-shard operations are computationally expensive
 
-
+ROW VS COLUMNAR FILE FORMAT
+-AVRO    - row based storage format     - efficient for write-heavy operations
+-PARQUET - columnar storage file format - efficient for read-heavy operations
+-ORC     - (Optimised Row Columnar)     - for mix workloads
+-other file formats
+--CSV: Best for simple, flat data structures and scenarios where human readability is important.
+--JSON: Suitable for web applications and APIs with complex, nested data.
+--XML: Ideal for document-centric data and scenarios requiring extensive metadata.
 
 
 
