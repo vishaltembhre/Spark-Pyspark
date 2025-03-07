@@ -58,6 +58,8 @@ ROW VS COLUMNAR FILE FORMAT
 --JSON: Suitable for web applications and APIs with complex, nested data.
 --XML: Ideal for document-centric data and scenarios requiring extensive metadata.
 
-
-
+DATABASE TABLE OPTIMIZATION
+-scan frequency and table size are the two metrics most relevant to estimating table significance that needed to be optimized
+-distribution key - When you create a table, you can optionally specify one column as the distribution key. When the table is loaded with data, the rows are distributed to the node slices according to the distribution key that is defined for a table. Choosing a good distribution key enables Amazon Redshift to use parallel processing to load data and run queries efficiently.
+-cluster > leader node > computer node > node slice
   
